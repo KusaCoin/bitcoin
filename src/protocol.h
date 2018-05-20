@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2017 The Bitcoin Core developers
+// Copyright (c) 2018 The Kusacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,8 +8,8 @@
 #error This header can only be compiled as C++.
 #endif
 
-#ifndef BITCOIN_PROTOCOL_H
-#define BITCOIN_PROTOCOL_H
+#ifndef KUSACOIN_PROTOCOL_H
+#define KUSACOIN_PROTOCOL_H
 
 #include <netaddress.h>
 #include <serialize.h>
@@ -406,4 +407,4 @@ public:
     uint256 hash;
 };
 
-#endif // BITCOIN_PROTOCOL_H
+#endif // KUSACOIN_PROTOCOL_H

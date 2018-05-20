@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_WALLET_H
-#define BITCOIN_WALLET_WALLET_H
+#ifndef KUSACOIN_WALLET_WALLET_H
+#define KUSACOIN_WALLET_WALLET_H
 
 #include <amount.h>
 #include <policy/feerate.h>
@@ -1305,4 +1305,4 @@ public:
     }
 };
 
-#endif // BITCOIN_WALLET_WALLET_H
+#endif // KUSACOIN_WALLET_WALLET_H

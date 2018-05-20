@@ -1,9 +1,10 @@
 // Copyright (c) 2016-2017 The Bitcoin Core developers
+// Copyright (c) 2018 The Kusacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CONSENSUS_VERSIONBITS
-#define BITCOIN_CONSENSUS_VERSIONBITS
+#ifndef KUSACOIN_CONSENSUS_VERSIONBITS
+#define KUSACOIN_CONSENSUS_VERSIONBITS
 
 #include <chain.h>
 #include <map>

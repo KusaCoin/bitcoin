@@ -1,10 +1,11 @@
 // Copyright (c) 2012 Pieter Wuille
 // Copyright (c) 2012-2017 The Bitcoin Core developers
+// Copyright (c) 2018 The Kusacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_ADDRMAN_H
-#define BITCOIN_ADDRMAN_H
+#ifndef KUSACOIN_ADDRMAN_H
+#define KUSACOIN_ADDRMAN_H
 
 #include <netaddress.h>
 #include <protocol.h>
@@ -601,4 +602,4 @@ public:
 
 };
 
-#endif // BITCOIN_ADDRMAN_H
+#endif // KUSACOIN_ADDRMAN_H

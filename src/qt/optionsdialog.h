@@ -1,9 +1,10 @@
 // Copyright (c) 2011-2017 The Bitcoin Core developers
+// Copyright (c) 2018 The Kusacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_OPTIONSDIALOG_H
-#define BITCOIN_QT_OPTIONSDIALOG_H
+#ifndef KUSACOIN_QT_OPTIONSDIALOG_H
+#define KUSACOIN_QT_OPTIONSDIALOG_H
 
 #include <QDialog>
 #include <QValidator>
@@ -68,4 +69,4 @@ private:
     QDataWidgetMapper *mapper;
 };
 
-#endif // BITCOIN_QT_OPTIONSDIALOG_H
+#endif // KUSACOIN_QT_OPTIONSDIALOG_H

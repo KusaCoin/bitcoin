@@ -1,9 +1,10 @@
 // Copyright (c) 2015-2017 The Bitcoin Core developers
+// Copyright (c) 2018 The Kusacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_MERKLE
-#define BITCOIN_MERKLE
+#ifndef KUSACOIN_MERKLE
+#define KUSACOIN_MERKLE
 
 #include <stdint.h>
 #include <vector>

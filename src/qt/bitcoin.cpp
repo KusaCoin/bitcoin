@@ -541,7 +541,7 @@ WId BitcoinApplication::getMainWinId() const
     return window->winId();
 }
 
-#ifndef BITCOIN_QT_TEST
+#ifndef KUSACOIN_QT_TEST
 int main(int argc, char *argv[])
 {
     SetupEnvironment();
@@ -726,4 +726,4 @@ int main(int argc, char *argv[])
     }
     return rv;
 }
-#endif // BITCOIN_QT_TEST
+#endif // KUSACOIN_QT_TEST

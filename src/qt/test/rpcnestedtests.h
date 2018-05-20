@@ -1,9 +1,10 @@
 // Copyright (c) 2016-2017 The Bitcoin Core developers
+// Copyright (c) 2018 The Kusacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_TEST_RPC_NESTED_TESTS_H
-#define BITCOIN_QT_TEST_RPC_NESTED_TESTS_H
+#ifndef KUSACOIN_QT_TEST_RPC_NESTED_TESTS_H
+#define KUSACOIN_QT_TEST_RPC_NESTED_TESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -19,4 +20,4 @@ class RPCNestedTests : public QObject
     void rpcNestedTests();
 };
 
-#endif // BITCOIN_QT_TEST_RPC_NESTED_TESTS_H
+#endif // KUSACOIN_QT_TEST_RPC_NESTED_TESTS_H
