@@ -92,7 +92,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>KusacoinGUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>
@@ -202,6 +202,6 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>kusacoin-core</name>
     </context>
 </TS>

@@ -216,7 +216,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR KUSACOINS&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -302,7 +302,7 @@
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>KusacoinGUI</name>
     <message>
         <location filename="../kusacoingui.cpp" line="+358"/>
         <source>Sign &amp;message...</source>
@@ -4023,7 +4023,7 @@
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>kusacoin-core</name>
     <message>
         <location filename="../kusacoinstrings.cpp" line="+351"/>
         <source>Options:</source>

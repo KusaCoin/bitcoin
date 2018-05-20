@@ -188,7 +188,7 @@
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>KusacoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Подпиши съобщение...</translation>
@@ -892,7 +892,7 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>kusacoin-core</name>
     <message>
         <source>Kusacoin Core</source>
         <translation>Биткойн ядро</translation>

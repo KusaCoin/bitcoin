@@ -88,7 +88,7 @@
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>KusacoinGUI</name>
     <message>
         <source>Send coins to a Kusacoin address</source>
         <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន Kusacoin មួយ</translation>
@@ -210,6 +210,6 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>kusacoin-core</name>
     </context>
 </TS>

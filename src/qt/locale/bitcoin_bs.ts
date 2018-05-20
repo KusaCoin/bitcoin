@@ -12,7 +12,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>KusacoinGUI</name>
     <message>
         <source>Kusacoin</source>
         <translation>Kusacoin</translation>
@@ -158,7 +158,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>kusacoin-core</name>
     <message>
         <source>Kusacoin Core</source>
         <translation>Kusacoin Jezrga</translation>
