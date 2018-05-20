@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef KUSACOIN_TEST_TEST_BITCOIN_H
-#define KUSACOIN_TEST_TEST_BITCOIN_H
+#ifndef KUSACOIN_TEST_TEST_KUSACOIN_H
+#define KUSACOIN_TEST_TEST_KUSACOIN_H
 
 #include <chainparamsbase.h>
 #include <fs.h>

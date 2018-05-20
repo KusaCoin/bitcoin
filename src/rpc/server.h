@@ -138,7 +138,7 @@ public:
 };
 
 /**
- * Bitcoin RPC command dispatcher.
+ * Kusacoin RPC command dispatcher.
  */
 class CRPCTable
 {

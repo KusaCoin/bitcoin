@@ -7,7 +7,7 @@
 #define KUSACOIN_QT_PAYMENTSERVER_H
 
 // This class handles payment requests from clicking on
-// bitcoin: URIs
+// kusacoin: URIs
 //
 // This is somewhat tricky, because we have to deal with
 // the situation where the user clicks on a link during

@@ -17,7 +17,7 @@ static const CAmount CENT = 1000000;
 
 /** No amount larger than this (in tanaka) is valid.
  *
- * Note that this constant is *not* the total money supply, which in Bitcoin
+ * Note that this constant is *not* the total money supply, which in Kusacoin
  * currently happens to be less than 21,000,000 KUSA for various reasons, but
  * rather a sanity check. As this sanity check is used by consensus-critical
  * validation code, the exact value of the MAX_MONEY constant is consensus

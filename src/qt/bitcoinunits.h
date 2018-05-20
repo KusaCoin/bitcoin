@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef KUSACOIN_QT_BITCOINUNITS_H
-#define KUSACOIN_QT_BITCOINUNITS_H
+#ifndef KUSACOIN_QT_KUSACOINUNITS_H
+#define KUSACOIN_QT_KUSACOINUNITS_H
 
 #include <amount.h>
 
@@ -45,12 +45,12 @@
 /** Kusacoin unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class BitcoinUnits: public QAbstractListModel
+class KusacoinUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit BitcoinUnits(QObject *parent);
+    explicit KusacoinUnits(QObject *parent);
 
     /** Kusacoin units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
@@ -124,8 +124,8 @@ public:
     static CAmount maxMoney();
 
 private:
-    QList<BitcoinUnits::Unit> unitlist;
+    QList<KusacoinUnits::Unit> unitlist;
 };
-typedef BitcoinUnits::Unit BitcoinUnit;
+typedef KusacoinUnits::Unit KusacoinUnit;
 
-#endif // KUSACOIN_QT_BITCOINUNITS_H
+#endif // KUSACOIN_QT_KUSACOINUNITS_H

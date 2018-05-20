@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef KUSACOIN_QT_BITCOINGUI_H
-#define KUSACOIN_QT_BITCOINGUI_H
+#ifndef KUSACOIN_QT_KUSACOINGUI_H
+#define KUSACOIN_QT_KUSACOINGUI_H
 
 #if defined(HAVE_CONFIG_H)
 #include <config/bitcoin-config.h>
@@ -42,7 +42,7 @@ QT_END_NAMESPACE
   Kusacoin GUI main class. This class represents the main window of the Kusacoin UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class BitcoinGUI : public QMainWindow
+class KusacoinGUI : public QMainWindow
 {
     Q_OBJECT
 
@@ -50,8 +50,8 @@ public:
     static const QString DEFAULT_WALLET;
     static const std::string DEFAULT_UIPLATFORM;
 
-    explicit BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
-    ~BitcoinGUI();
+    explicit KusacoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
+    ~KusacoinGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -273,4 +273,4 @@ private Q_SLOTS:
     void onMenuSelection(QAction* action);
 };
 
-#endif // KUSACOIN_QT_BITCOINGUI_H
+#endif // KUSACOIN_QT_KUSACOINGUI_H

@@ -1,4 +1,5 @@
 // Copyright (c) 2014-2017 The Bitcoin Core developers
+// Copyright (c) 2018 The Kusacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -269,7 +270,7 @@ CTxDestination DecodeDestination(const std::string& str, const CChainParams& par
     std::vector<unsigned char> data;
     uint160 hash;
     if (DecodeBase58Check(str, data)) {
-        // base58-encoded Bitcoin addresses.
+        // base58-encoded Kusacoin addresses.
         // Public-key-hash-addresses have version 0 (or 111 testnet).
         // The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
         const std::vector<unsigned char>& pubkey_prefix = params.Base58Prefix(CChainParams::PUBKEY_ADDRESS);
@@ -323,7 +324,7 @@ CTxDestination DecodeDestination(const std::string& str, const CChainParams& par
 }
 } // namespace
 
-void CBitcoinSecret::SetKey(const CKey& vchSecret)
+void CKusacoinSecret::SetKey(const CKey& vchSecret)
 {
     assert(vchSecret.IsValid());
     SetData(Params().Base58Prefix(CChainParams::SECRET_KEY), vchSecret.begin(), vchSecret.size());
@@ -331,7 +332,7 @@ void CBitcoinSecret::SetKey(const CKey& vchSecret)
         vchData.push_back(1);
 }
 
-CKey CBitcoinSecret::GetKey()
+CKey CKusacoinSecret::GetKey()
 {
     CKey ret;
     assert(vchData.size() >= 32);
@@ -339,19 +340,19 @@ CKey CBitcoinSecret::GetKey()
     return ret;
 }
 
-bool CBitcoinSecret::IsValid() const
+bool CKusacoinSecret::IsValid() const
 {
     bool fExpectedFormat = vchData.size() == 32 || (vchData.size() == 33 && vchData[32] == 1);
     bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY);
     return fExpectedFormat && fCorrectVersion;
 }
 
-bool CBitcoinSecret::SetString(const char* pszSecret)
+bool CKusacoinSecret::SetString(const char* pszSecret)
 {
     return CBase58Data::SetString(pszSecret) && IsValid();
 }
 
-bool CBitcoinSecret::SetString(const std::string& strSecret)
+bool CKusacoinSecret::SetString(const std::string& strSecret)
 {
     return SetString(strSecret.c_str());
 }
