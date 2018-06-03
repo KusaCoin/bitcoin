@@ -5,7 +5,7 @@
 
 #include <qt/walletframe.h>
 
-#include <qt/bitcoingui.h>
+#include <qt/kusacoingui.h>
 #include <qt/walletview.h>
 
 #include <cassert>

@@ -7,7 +7,7 @@
 #define KUSACOIN_COMPAT_BYTESWAP_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/kusacoin-config.h>
 #endif
 
 #include <stdint.h>
