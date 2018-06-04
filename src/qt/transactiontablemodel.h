@@ -6,7 +6,7 @@
 #ifndef KUSACOIN_QT_TRANSACTIONTABLEMODEL_H
 #define KUSACOIN_QT_TRANSACTIONTABLEMODEL_H
 
-#include <qt/bitcoinunits.h>
+#include <qt/kusacoinunits.h>
 
 #include <QAbstractTableModel>
 #include <QStringList>

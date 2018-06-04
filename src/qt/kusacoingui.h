@@ -7,7 +7,7 @@
 #define KUSACOIN_QT_KUSACOINGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/kusacoin-config.h>
 #endif
 
 #include <amount.h>

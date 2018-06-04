@@ -4,10 +4,10 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/kusacoin-config.h>
 #endif
 
-#include <qt/bitcoingui.h>
+#include <qt/kusacoingui.h>
 
 #include <chainparams.h>
 #include <qt/clientmodel.h>
@@ -259,7 +259,7 @@ private:
     void startThread();
 };
 
-#include <qt/bitcoin.moc>
+#include <qt/kusacoin.moc>
 
 KusacoinCore::KusacoinCore():
     QObject()
@@ -559,8 +559,8 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(bitcoin);
-    Q_INIT_RESOURCE(bitcoin_locale);
+    Q_INIT_RESOURCE(kusacoin);
+    Q_INIT_RESOURCE(kusacoin_locale);
 
     KusacoinApplication app(argc, argv);
 #if QT_VERSION > 0x050100
