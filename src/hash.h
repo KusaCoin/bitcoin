@@ -9,6 +9,7 @@
 
 #include <crypto/ripemd160.h>
 #include <crypto/sha256.h>
+#include <crypto/Lyra2RE/Lyra2RE.h>
 #include <prevector.h>
 #include <serialize.h>
 #include <uint256.h>
@@ -147,6 +148,32 @@ public:
     }
 };
 
+class CHashLyra2LEv2Writer
+{
+private:
+    // Lyra2LE specialize in 80 bytes data
+    char data[80] = {};
+    size_t n = 0;
+
+public:
+    void write(const char *pch, size_t size) {
+        for (size_t i=0; i<size && n<80; i++)
+            data[n++] = pch[i];
+    }
+
+    uint256 GetHash() {
+        uint256 result;
+        lyra2re2_hash(data, reinterpret_cast<char *>(&result));
+        return result;
+    }
+
+    template<typename T>
+    CHashLyra2LEv2Writer& operator<<(const T&obj) {
+        ::Serialize(*this, obj);
+        return *this;
+    }
+};
+
 /** Reads data from an underlying stream, while hashing the read data. */
 template<typename Source>
 class CHashVerifier : public CHashWriter
@@ -187,6 +214,14 @@ template<typename T>
 uint256 SerializeHash(const T& obj, int nType=SER_GETHASH, int nVersion=PROTOCOL_VERSION)
 {
     CHashWriter ss(nType, nVersion);
+    ss << obj;
+    return ss.GetHash();
+}
+
+template<typename T>
+uint256 SerializeHashLyra2LEv2(const T& obj, int nType=SER_GETHASH, int nVersion=PROTOCOL_VERSION)
+{
+    CHashLyra2LEv2Writer ss;
     ss << obj;
     return ss.GetHash();
 }
