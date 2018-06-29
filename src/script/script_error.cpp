@@ -35,10 +35,14 @@ const char* ScriptErrorString(const ScriptError serror)
             return "Signature count negative or greater than pubkey count";
         case SCRIPT_ERR_PUBKEY_COUNT:
             return "Pubkey count negative or limit exceeded";
+        case SCRIPT_ERR_INVALID_RANGE:
+            return "Invalid range";
+        case SCRIPT_ERR_DIV_BY_ZERO:
+            return "Division by zero";
+        case SCRIPT_ERR_NEGATIVE_SHIFT:
+            return "Negative left or right shift";
         case SCRIPT_ERR_BAD_OPCODE:
             return "Opcode missing or not understood";
-        case SCRIPT_ERR_DISABLED_OPCODE:
-            return "Attempted to use a disabled opcode";
         case SCRIPT_ERR_INVALID_STACK_OPERATION:
             return "Operation not valid with the current stack size";
         case SCRIPT_ERR_INVALID_ALTSTACK_OPERATION:

@@ -265,8 +265,18 @@ public:
 
     inline CScriptNum operator+(   const int64_t& rhs)    const { return CScriptNum(m_value + rhs);}
     inline CScriptNum operator-(   const int64_t& rhs)    const { return CScriptNum(m_value - rhs);}
+    inline CScriptNum operator*(   const int64_t& rhs)    const { return CScriptNum(m_value * rhs);}  // rounded to 64bit
+    inline CScriptNum operator/(   const int64_t& rhs)    const { return CScriptNum(m_value / rhs);}
+    inline CScriptNum operator%(   const int64_t& rhs)    const { return CScriptNum(m_value % rhs);}
+    inline CScriptNum operator<<(  const int64_t& rhs)    const { CScriptNum tmp(*this); tmp<<=rhs; return tmp;}
+    inline CScriptNum operator>>(  const int64_t& rhs)    const { CScriptNum tmp(*this); tmp>>=rhs; return tmp;}
     inline CScriptNum operator+(   const CScriptNum& rhs) const { return operator+(rhs.m_value);   }
     inline CScriptNum operator-(   const CScriptNum& rhs) const { return operator-(rhs.m_value);   }
+    inline CScriptNum operator*(   const CScriptNum& rhs) const { return operator*(rhs.m_value);   }
+    inline CScriptNum operator/(   const CScriptNum& rhs) const { return operator/(rhs.m_value);   }
+    inline CScriptNum operator%(   const CScriptNum& rhs) const { return operator%(rhs.m_value);   }
+    inline CScriptNum operator<<(  const CScriptNum& rhs) const { return operator<<(rhs.m_value);   }
+    inline CScriptNum operator>>(  const CScriptNum& rhs) const { return operator>>(rhs.m_value);   }
 
     inline CScriptNum& operator+=( const CScriptNum& rhs)       { return operator+=(rhs.m_value);  }
     inline CScriptNum& operator-=( const CScriptNum& rhs)       { return operator-=(rhs.m_value);  }
@@ -301,6 +311,24 @@ public:
         assert(rhs == 0 || (rhs > 0 && m_value >= std::numeric_limits<int64_t>::min() + rhs) ||
                            (rhs < 0 && m_value <= std::numeric_limits<int64_t>::max() + rhs));
         m_value -= rhs;
+        return *this;
+    }
+
+    inline CScriptNum& operator<<=( const int64_t& rhs)
+    {
+        assert(0<=rhs && rhs<64);
+        m_value <<= rhs;
+        return *this;
+    }
+
+    inline CScriptNum& operator>>=( const int64_t& rhs)
+    {
+        assert(0<=rhs && rhs<64);
+        //  arithmetic shift
+        if (m_value >= 0)
+            m_value >>= rhs;
+        else
+            m_value = m_value>>rhs | ~(~(uint64_t)0 >> rhs);
         return *this;
     }
 
