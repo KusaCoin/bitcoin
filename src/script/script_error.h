@@ -22,6 +22,11 @@ typedef enum ScriptError_t
     SCRIPT_ERR_SIG_COUNT,
     SCRIPT_ERR_PUBKEY_COUNT,
 
+    /* Operands checks */
+    SCRIPT_ERR_INVALID_RANGE,
+    SCRIPT_ERR_DIV_BY_ZERO,
+    SCRIPT_ERR_NEGATIVE_SHIFT,
+
     /* Failed verify operations */
     SCRIPT_ERR_VERIFY,
     SCRIPT_ERR_EQUALVERIFY,
@@ -31,7 +36,6 @@ typedef enum ScriptError_t
 
     /* Logical/Format/Canonical errors */
     SCRIPT_ERR_BAD_OPCODE,
-    SCRIPT_ERR_DISABLED_OPCODE,
     SCRIPT_ERR_INVALID_STACK_OPERATION,
     SCRIPT_ERR_INVALID_ALTSTACK_OPERATION,
     SCRIPT_ERR_UNBALANCED_CONDITIONAL,
