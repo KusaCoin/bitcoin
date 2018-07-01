@@ -42,7 +42,7 @@ unsigned int ParseConfirmTarget(const UniValue& value)
 
 /**
  * Return average network hashes per second based on the last 'lookup' blocks,
- * or from the last difficulty change if 'lookup' is nonpositive.
+ * or averaging window size in difficulty adjustment if 'lookup' is nonpositive.
  * If 'height' is nonnegative, compute the estimate at the time when a given block was found.
  */
 UniValue GetNetworkHashPS(int lookup, int height) {
@@ -54,9 +54,9 @@ UniValue GetNetworkHashPS(int lookup, int height) {
     if (pb == nullptr || !pb->nHeight)
         return 0;
 
-    // If lookup is -1, then use blocks since last difficulty change.
+    // If lookup is -1, then use averageing window size
     if (lookup <= 0)
-        lookup = pb->nHeight % Params().GetConsensus().DifficultyAdjustmentInterval() + 1;
+        lookup = Params().GetConsensus().nZawyLwmaAveragingWindow;
 
     // If lookup is larger than chain, then set it to chain length.
     if (lookup > pb->nHeight)
@@ -91,7 +91,7 @@ UniValue getnetworkhashps(const JSONRPCRequest& request)
             "Pass in [blocks] to override # of blocks, -1 specifies since last difficulty change.\n"
             "Pass in [height] to estimate the network speed at the time when a certain block was found.\n"
             "\nArguments:\n"
-            "1. nblocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks since last difficulty change.\n"
+            "1. nblocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks used in difficulty adjustment.\n"
             "2. height      (numeric, optional, default=-1) To estimate at the time of the given height.\n"
             "\nResult:\n"
             "x             (numeric) Hashes per second estimated\n"
@@ -496,11 +496,7 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
         // TODO: Maybe recheck connections/IBD and (if something wrong) send an expires-immediately template to stop miners?
     }
 
-    const struct VBDeploymentInfo& segwit_info = VersionBitsDeploymentInfo[Consensus::DEPLOYMENT_SEGWIT];
-    // If the caller is indicating segwit support, then allow CreateNewBlock()
-    // to select witness transactions, after segwit activates (otherwise
-    // don't).
-    bool fSupportsSegwit = setClientRules.find(segwit_info.name) != setClientRules.end();
+    bool fSupportsSegwit = setClientRules.find("segwit") != setClientRules.end();
 
     // Update block
     static CBlockIndex* pindexPrev;
@@ -538,9 +534,6 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     UpdateTime(pblock, consensusParams, pindexPrev);
     pblock->nNonce = 0;
 
-    // NOTE: If at some point we support pre-segwit miners post-segwit-activation, this needs to take segwit support into consideration
-    const bool fPreSegWit = (THRESHOLD_ACTIVE != VersionBitsState(pindexPrev, consensusParams, Consensus::DEPLOYMENT_SEGWIT, versionbitscache));
-
     UniValue aCaps(UniValue::VARR); aCaps.push_back("proposal");
 
     UniValue transactions(UniValue::VARR);
@@ -571,10 +564,6 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
         int index_in_template = i - 1;
         entry.push_back(Pair("fee", pblocktemplate->vTxFees[index_in_template]));
         int64_t nTxSigOps = pblocktemplate->vTxSigOpsCost[index_in_template];
-        if (fPreSegWit) {
-            assert(nTxSigOps % WITNESS_SCALE_FACTOR == 0);
-            nTxSigOps /= WITNESS_SCALE_FACTOR;
-        }
         entry.push_back(Pair("sigops", nTxSigOps));
         entry.push_back(Pair("weight", GetTransactionWeight(tx)));
 
@@ -595,8 +584,10 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     result.push_back(Pair("capabilities", aCaps));
 
     UniValue aRules(UniValue::VARR);
+    aRules.push_back("csv");
+    aRules.push_back("segwit");
     UniValue vbavailable(UniValue::VOBJ);
-    for (int j = 0; j < (int)Consensus::MAX_VERSION_BITS_DEPLOYMENTS; ++j) {
+    for (int j = (int)Consensus::DEPLOYMENT_TESTDUMMY+1; j < (int)Consensus::MAX_VERSION_BITS_DEPLOYMENTS; ++j) {
         Consensus::DeploymentPos pos = Consensus::DeploymentPos(j);
         ThresholdState state = VersionBitsState(pindexPrev, consensusParams, pos, versionbitscache);
         switch (state) {
@@ -660,17 +651,9 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     result.push_back(Pair("noncerange", "00000000ffffffff"));
     int64_t nSigOpLimit = MAX_BLOCK_SIGOPS_COST;
     int64_t nSizeLimit = MAX_BLOCK_SERIALIZED_SIZE;
-    if (fPreSegWit) {
-        assert(nSigOpLimit % WITNESS_SCALE_FACTOR == 0);
-        nSigOpLimit /= WITNESS_SCALE_FACTOR;
-        assert(nSizeLimit % WITNESS_SCALE_FACTOR == 0);
-        nSizeLimit /= WITNESS_SCALE_FACTOR;
-    }
     result.push_back(Pair("sigoplimit", nSigOpLimit));
     result.push_back(Pair("sizelimit", nSizeLimit));
-    if (!fPreSegWit) {
-        result.push_back(Pair("weightlimit", (int64_t)MAX_BLOCK_WEIGHT));
-    }
+    result.push_back(Pair("weightlimit", (int64_t)MAX_BLOCK_WEIGHT));
     result.push_back(Pair("curtime", pblock->GetBlockTime()));
     result.push_back(Pair("bits", strprintf("%08x", pblock->nBits)));
     result.push_back(Pair("height", (int64_t)(pindexPrev->nHeight+1)));

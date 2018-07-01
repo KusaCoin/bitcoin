@@ -219,6 +219,15 @@ BOOST_FIXTURE_TEST_CASE(checkinputs_test, TestChain100Setup)
     // enabled yet), even though there's no cache entry.
     CBlock block;
 
+    // Since in Kusacoin SCRIPT_VERIFY_DERSIG is always enabled, sign again
+    {
+        std::vector<unsigned char> vchSig;
+        uint256 hash = SignatureHash(p2pk_scriptPubKey, spend_tx, 0, SIGHASH_ALL, 0, SIGVERSION_BASE);
+        BOOST_CHECK(coinbaseKey.Sign(hash, vchSig));
+        vchSig.push_back((unsigned char)SIGHASH_ALL);
+        spend_tx.vin[0].scriptSig = CScript() << vchSig;
+    }
+
     block = CreateAndProcessBlock({spend_tx}, p2pk_scriptPubKey);
     BOOST_CHECK(chainActive.Tip()->GetBlockHash() == block.GetHash());
     BOOST_CHECK(pcoinsTip->GetBestBlock() == block.GetHash());

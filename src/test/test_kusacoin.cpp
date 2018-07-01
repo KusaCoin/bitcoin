@@ -113,9 +113,6 @@ TestingSetup::~TestingSetup()
 
 TestChain100Setup::TestChain100Setup() : TestingSetup(CBaseChainParams::REGTEST)
 {
-    // CreateAndProcessBlock() does not support building SegWit blocks, so don't activate in these tests.
-    // TODO: fix the code to support SegWit blocks.
-    UpdateVersionBitsParameters(Consensus::DEPLOYMENT_SEGWIT, 0, Consensus::BIP9Deployment::NO_TIMEOUT);
     // Generate a 100-block chain:
     coinbaseKey.MakeNewKey(true);
     CScript scriptPubKey = CScript() <<  ToByteVector(coinbaseKey.GetPubKey()) << OP_CHECKSIG;
@@ -142,6 +139,17 @@ TestChain100Setup::CreateAndProcessBlock(const std::vector<CMutableTransaction>&
     block.vtx.resize(1);
     for (const CMutableTransaction& tx : txns)
         block.vtx.push_back(MakeTransactionRef(tx));
+
+    // Update coinbase commitment
+    if (!txns.empty())
+    {
+        CMutableTransaction tx(*block.vtx[0]);
+        tx.vout.resize(1);
+        block.vtx[0] = MakeTransactionRef(std::move(tx));
+
+        GenerateCoinbaseCommitment(block, nullptr, chainparams.GetConsensus());
+    }
+
     // IncrementExtraNonce creates a valid coinbase and merkleRoot
     unsigned int extraNonce = 0;
     {
