@@ -195,7 +195,6 @@ public:
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
         fDefaultConsistencyChecks = false;
-        fRequireStandard = false;
         fMineBlocksOnDemand = false;
 
 
@@ -254,7 +253,6 @@ public:
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
 
         fDefaultConsistencyChecks = true;
-        fRequireStandard = false;
         fMineBlocksOnDemand = true;
 
         checkpointData = {
