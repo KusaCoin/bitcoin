@@ -20,9 +20,11 @@
 
 CTxMemPoolEntry::CTxMemPoolEntry(const CTransactionRef& _tx, const CAmount& _nFee,
                                  int64_t _nTime, unsigned int _entryHeight,
-                                 bool _spendsCoinbase, int64_t _sigOpsCost, LockPoints lp):
+                                 bool _spendsCoinbase, int64_t _sigOpsCost, LockPoints lp,
+                                 bool _fMemPoolOnly):
     tx(_tx), nFee(_nFee), nTime(_nTime), entryHeight(_entryHeight),
-    spendsCoinbase(_spendsCoinbase), sigOpCost(_sigOpsCost), lockPoints(lp)
+    spendsCoinbase(_spendsCoinbase), sigOpCost(_sigOpsCost), lockPoints(lp),
+    fMemPoolOnly(_fMemPoolOnly)
 {
     nTxWeight = GetTransactionWeight(*tx);
     nUsageSize = RecursiveDynamicUsage(tx);
@@ -800,7 +802,7 @@ static TxMempoolInfo GetInfo(CTxMemPool::indexed_transaction_set::const_iterator
     return TxMempoolInfo{it->GetSharedTx(), it->GetTime(), CFeeRate(it->GetFee(), it->GetTxSize()), it->GetModifiedFee() - it->GetFee()};
 }
 
-std::vector<TxMempoolInfo> CTxMemPool::infoAll() const
+std::vector<TxMempoolInfo> CTxMemPool::infoAll(bool fIncludeMemPoolOnly) const
 {
     LOCK(cs);
     auto iters = GetSortedDepthAndScore();
@@ -808,7 +810,8 @@ std::vector<TxMempoolInfo> CTxMemPool::infoAll() const
     std::vector<TxMempoolInfo> ret;
     ret.reserve(mapTx.size());
     for (auto it : iters) {
-        ret.push_back(GetInfo(it));
+        if (fIncludeMemPoolOnly || !it->GetMemPoolOnly())
+            ret.push_back(GetInfo(it));
     }
 
     return ret;
@@ -823,11 +826,13 @@ CTransactionRef CTxMemPool::get(const uint256& hash) const
     return i->GetSharedTx();
 }
 
-TxMempoolInfo CTxMemPool::info(const uint256& hash) const
+TxMempoolInfo CTxMemPool::info(const uint256& hash, bool fIncludeMemPoolOnly) const
 {
     LOCK(cs);
     indexed_transaction_set::const_iterator i = mapTx.find(hash);
     if (i == mapTx.end())
+        return TxMempoolInfo();
+    if (!fIncludeMemPoolOnly && i->GetMemPoolOnly())
         return TxMempoolInfo();
     return GetInfo(i);
 }
