@@ -89,11 +89,13 @@ private:
     CAmount nModFeesWithAncestors;
     int64_t nSigOpCostWithAncestors;
 
+    bool fMemPoolOnly;
+
 public:
     CTxMemPoolEntry(const CTransactionRef& _tx, const CAmount& _nFee,
                     int64_t _nTime, unsigned int _entryHeight,
                     bool spendsCoinbase,
-                    int64_t nSigOpsCost, LockPoints lp);
+                    int64_t nSigOpsCost, LockPoints lp, bool _fMemPoolOnly);
 
     const CTransaction& GetTx() const { return *this->tx; }
     CTransactionRef GetSharedTx() const { return this->tx; }
@@ -127,6 +129,8 @@ public:
     uint64_t GetSizeWithAncestors() const { return nSizeWithAncestors; }
     CAmount GetModFeesWithAncestors() const { return nModFeesWithAncestors; }
     int64_t GetSigOpCostWithAncestors() const { return nSigOpCostWithAncestors; }
+
+    bool GetMemPoolOnly() const { return fMemPoolOnly; }
 
     mutable size_t vTxHashesIdx; //!< Index in mempool's vTxHashes
 };
@@ -277,19 +281,27 @@ public:
     template<typename T>
     bool operator()(const T& a, const T& b) const
     {
-        double a_mod_fee, a_size, b_mod_fee, b_size;
+        //  This comparetor is used in packing transactions into a block.
+        //  Move transactions with fMemPoolOnly = true first to mine by myself.
+        int a_memonly = a.GetMemPoolOnly() ? 1 : 0;
+        int b_memonly = b.GetMemPoolOnly() ? 1 : 0;
+        if (a_memonly == b_memonly)
+        {
+            double a_mod_fee, a_size, b_mod_fee, b_size;
 
-        GetModFeeAndSize(a, a_mod_fee, a_size);
-        GetModFeeAndSize(b, b_mod_fee, b_size);
+            GetModFeeAndSize(a, a_mod_fee, a_size);
+            GetModFeeAndSize(b, b_mod_fee, b_size);
 
-        // Avoid division by rewriting (a/b > c/d) as (a*d > c*b).
-        double f1 = a_mod_fee * b_size;
-        double f2 = a_size * b_mod_fee;
+            // Avoid division by rewriting (a/b > c/d) as (a*d > c*b).
+            double f1 = a_mod_fee * b_size;
+            double f2 = a_size * b_mod_fee;
 
-        if (f1 == f2) {
-            return a.GetTx().GetHash() < b.GetTx().GetHash();
+            if (f1 == f2) {
+                return a.GetTx().GetHash() < b.GetTx().GetHash();
+            }
+            return f1 > f2;
         }
-        return f1 > f2;
+        return a_memonly > b_memonly;
     }
 
     // Return the fee/size we're using for sorting this entry.
@@ -638,8 +650,8 @@ public:
     }
 
     CTransactionRef get(const uint256& hash) const;
-    TxMempoolInfo info(const uint256& hash) const;
-    std::vector<TxMempoolInfo> infoAll() const;
+    TxMempoolInfo info(const uint256& hash, bool fIncludeMemPoolOnly) const;
+    std::vector<TxMempoolInfo> infoAll(bool fIncludeMemPoolOnly) const;
 
     size_t DynamicMemoryUsage() const;
 
