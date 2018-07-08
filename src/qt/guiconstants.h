@@ -50,7 +50,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Kusacoin"
-#define QAPP_ORG_DOMAIN "kusacoin.sweetduet.info"
+#define QAPP_ORG_DOMAIN "kusacoin.github.io"
 #define QAPP_APP_NAME_DEFAULT "Kusacoin-Qt"
 #define QAPP_APP_NAME_TESTNET "Kusacoin-Qt-testnet"
 

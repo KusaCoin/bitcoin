@@ -114,7 +114,7 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they dont support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        //vSeeds.emplace_back("example.com");
+        vSeeds.emplace_back("kusacoinseed.sweetduet.info");
 
         base58Prefixes[PUBKEY_ADDRESS] = {0xc8, 0x62, 0x0b, 0x94};
         base58Prefixes[SCRIPT_ADDRESS] = {0x30, 0x9b, 0x42, 0xa4};

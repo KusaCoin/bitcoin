@@ -519,7 +519,7 @@ std::string HelpMessage(HelpMessageMode mode)
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/kusacoin/kusacoin>";
-    const std::string URL_WEBSITE = "<https://kusacoin.sweetduet.info>";
+    const std::string URL_WEBSITE = "<https://kusacoin.github.io>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2009, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
