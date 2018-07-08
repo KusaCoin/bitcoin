@@ -349,7 +349,8 @@ bool CKusacoinSecret::IsValid() const
 
 bool CKusacoinSecret::SetString(const char* pszSecret)
 {
-    return CBase58Data::SetString(pszSecret) && IsValid();
+    unsigned int nVersionBytes = static_cast<unsigned int>(Params().Base58Prefix(CChainParams::SECRET_KEY).size());
+    return CBase58Data::SetString(pszSecret, nVersionBytes) && IsValid();
 }
 
 bool CKusacoinSecret::SetString(const std::string& strSecret)
