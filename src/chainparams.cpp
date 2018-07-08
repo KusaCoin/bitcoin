@@ -116,13 +116,13 @@ public:
         // release ASAP to avoid it where possible.
         //vSeeds.emplace_back("example.com");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
+        base58Prefixes[PUBKEY_ADDRESS] = {0xc8, 0x62, 0x0b, 0x94};
+        base58Prefixes[SCRIPT_ADDRESS] = {0x30, 0x9b, 0x42, 0xa4};
+        base58Prefixes[SECRET_KEY] =     {0x9e, 0xa1, 0xc1, 0x0a};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0xd3, 0xd3, 0x30, 0xc0};
+        base58Prefixes[EXT_SECRET_KEY] = {0x8d, 0xc9, 0x87, 0x10};
 
-        bech32_hrp = "bc";
+        bech32_hrp = "kusa";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -184,13 +184,13 @@ public:
         // nodes with support for servicebits filtering should be at the top
         //vSeeds.emplace_back("example.com");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[PUBKEY_ADDRESS] = {0x31, 0xfb, 0x8d, 0xdb};
+        base58Prefixes[SCRIPT_ADDRESS] = {0xce, 0x76, 0xfd, 0xf4};
+        base58Prefixes[SECRET_KEY] =     {0xc8, 0xe3, 0xc1, 0x93};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x37, 0x86, 0xa4, 0xcc};
+        base58Prefixes[EXT_SECRET_KEY] = {0xfc, 0xb8, 0x01, 0xa0};
 
-        bech32_hrp = "tb";
+        bech32_hrp = "kusatest";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -267,13 +267,13 @@ public:
             0
         };
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[PUBKEY_ADDRESS] = {0x31, 0xfb, 0x8d, 0xdb};
+        base58Prefixes[SCRIPT_ADDRESS] = {0xce, 0x76, 0xfd, 0xf4};
+        base58Prefixes[SECRET_KEY] =     {0xc8, 0xe3, 0xc1, 0x93};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x37, 0x86, 0xa4, 0xcc};
+        base58Prefixes[EXT_SECRET_KEY] = {0xfc, 0xb8, 0x01, 0xa0};
 
-        bech32_hrp = "bcrt";
+        bech32_hrp = "kusareg";
     }
 };
 
