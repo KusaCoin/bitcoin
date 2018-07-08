@@ -17,10 +17,10 @@
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     CMutableTransaction txNew;
-    txNew.nVersion = 1;
+    txNew.nVersion = 2;
     txNew.vin.resize(1);
     txNew.vout.resize(1);
-    txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    txNew.vin[0].scriptSig = CScript() << 0 << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
     txNew.vout[0].nValue = genesisReward;
     txNew.vout[0].scriptPubKey = genesisOutputScript;
 
@@ -48,8 +48,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks";
-    const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+    const char* pszTimestamp = "Nogomet+ 06/Jul/2018 Najskuplja krila u povijesti stajala HNS 70 tisuca franaka";
+    const CScript genesisOutputScript = CScript() << OP_HASH160 << ParseHex("84fec8aa5c732cb18d8bd750811641e7e1e6b472") << OP_EQUAL;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -87,10 +87,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000f91c579d57cad4bc5278cc");
+        consensus.nMinimumChainWork = uint256S("0x00");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000000000000000005214481d2d96f898e3d5416e43359c145944a909d242e0"); //506067
+        consensus.defaultAssumeValid = uint256S("0x00");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -104,10 +104,10 @@ public:
         nDefaultPort = 9393;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1231006505, 8882241, 0x1e00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1531062000, 9987283, 0x1e00ffff, 2, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000084c39e3122c2b559272bec6f3e3d2802a5a87df6f1ed1633fee61c7b63"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000003acb5e87c6ad4985175506885cc88a0acf2fe8e398e1bb681274ea6f8c"));
+        assert(genesis.hashMerkleRoot == uint256S("0xd10a2acbf61e1dd85ff0abc9206938b73c3e16722980a137cefdee9262ac7b45"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -162,10 +162,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000002830dab7f76dbb7d63");
+        consensus.nMinimumChainWork = uint256S("0x00");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000000002e9e7b00e1f6dc5123a04aad68dd0f0968d8c7aa45f6640795c37b1"); //1135275
+        consensus.defaultAssumeValid = uint256S("0x00");
 
         pchMessageStart[0] = 0x93;
         pchMessageStart[1] = 0x89;
@@ -174,10 +174,10 @@ public:
         nDefaultPort = 19393;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1296688602, 11418168, 0x1e00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1531062001, 2739213, 0x1e00ffff, 2, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000000d450e33dc6fd6714189130651a59d95de47d593ec9a68c78bed8ee7f4c"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000009832a3bdaae54515587a8ffdf3cae8531d6067b28e1315829f0f242888"));
+        assert(genesis.hashMerkleRoot == uint256S("0xd10a2acbf61e1dd85ff0abc9206938b73c3e16722980a137cefdee9262ac7b45"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -244,10 +244,10 @@ public:
         nDefaultPort = 19494;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1531062002, 3, 0x207fffff, 2, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x155a2edb3d8516339db01a4868a400e57b99c1993e7cf27873350b80b5e49447"));
-        assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x42175de5dcad9922758e9ee1213b77912a0396d7e5b5182c594c0471f40cf473"));
+        assert(genesis.hashMerkleRoot == uint256S("0xd10a2acbf61e1dd85ff0abc9206938b73c3e16722980a137cefdee9262ac7b45"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -257,7 +257,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("155a2edb3d8516339db01a4868a400e57b99c1993e7cf27873350b80b5e49447")},
+                {0, uint256S("26d5b70ef04fcb4ae5c18e3e92562029af13956f8d9f8319ead74072dac00ca9")},
             }
         };
 
