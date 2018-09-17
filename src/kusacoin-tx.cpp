@@ -23,6 +23,7 @@
 #include <utilmoneystr.h>
 #include <utilstrencodings.h>
 
+#include <memory>
 #include <stdio.h>
 
 #include <boost/algorithm/string.hpp>

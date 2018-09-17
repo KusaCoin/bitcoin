@@ -31,7 +31,6 @@ QT_TS = \
   qt/locale/kusacoin_en_AU.ts \
   qt/locale/kusacoin_en_GB.ts \
   qt/locale/kusacoin_en.ts \
-  qt/locale/kusacoin_en_US.ts \
   qt/locale/kusacoin_eo.ts \
   qt/locale/kusacoin_es_419.ts \
   qt/locale/kusacoin_es_AR.ts \

@@ -8,6 +8,8 @@
 #include <support/allocators/secure.h>
 #include <test/test_kusacoin.h>
 
+#include <memory>
+
 #include <boost/test/unit_test.hpp>
 
 BOOST_FIXTURE_TEST_SUITE(allocator_tests, BasicTestingSetup)

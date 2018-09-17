@@ -62,12 +62,12 @@
         <translation>Fogadó címek</translation>
     </message>
     <message>
-        <source>These are your Kusacoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ezek az Ön kifizetéseinek küldésekor használandó Kusacoin-címek. Fizetés indítása előtt mindig ellenőrizze az összeget és a fogadó címet!</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ezek az Ön kifizetéseinek küldésekor használandó Bitcoin-címek. Fizetés indítása előtt mindig ellenőrizze az összeget és a fogadó címet!</translation>
     </message>
     <message>
-        <source>These are your Kusacoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Ezek az Ön fizetéseinek fogadásakor használandó Kusacoin-címek. Célszerű minden tranzakcióhoz új fogadó címet használni.</translation>
+        <source>These are your Bitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Ezek az Ön fizetéseinek fogadásakor használandó Bitcoin-címek. Célszerű minden tranzakcióhoz új fogadó címet használni.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -172,8 +172,8 @@
         <translation>Tárca titkosításának jóváhagyása</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR KUSACOINS&lt;/b&gt;!</source>
-        <translation>Figyelem: Ha titkosítja a pénztárcáját, és elveszíti a jelszóhalmazt, akkor &lt;b&gt;NEM TUD TÖBBET HOZZÁFÉRNI A KUSACOINJAIHOZ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation>Figyelem: Ha titkosítja a pénztárcáját, és elveszíti a jelszóhalmazt, akkor &lt;b&gt;NEM TUD TÖBBET HOZZÁFÉRNI A BITCOINJAIHOZ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -184,8 +184,8 @@
         <translation>Tárca titkosítva</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your kusacoins from being stolen by malware infecting your computer.</source>
-        <translation>%1 Most az ablak bezáródik, amíg befejeződik a titkosítási folyamat. Kérem vegye figyelembe, hogy a pénztárca titkosítása nem jelenti a kusacoinjai teljes körű védelmét, a számítógépét esetlegesen megfertőző kártékony programoktól.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation>%1 Most az ablak bezáródik, amíg befejeződik a titkosítási folyamat. Kérem vegye figyelembe, hogy a pénztárca titkosítása nem jelenti a bitcoinjai teljes körű védelmét, a számítógépét esetlegesen megfertőző kártékony programoktól.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -236,7 +236,7 @@
     </message>
 </context>
 <context>
-    <name>KusacoinGUI</name>
+    <name>BitcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Üzenet &amp;aláírása</translation>
@@ -342,8 +342,8 @@
         <translation>A blokkok újraindexelése folyik a merevlemezen...</translation>
     </message>
     <message>
-        <source>Send coins to a Kusacoin address</source>
-        <translation>Érmék küldése egy Kusacoin címre</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation>Érmék küldése egy Bitcoin címre</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -366,8 +366,8 @@
         <translation>Üzenet &amp;ellenőrzése</translation>
     </message>
     <message>
-        <source>Kusacoin</source>
-        <translation>Kusacoin</translation>
+        <source>Bitcoin</source>
+        <translation>Bitcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -394,12 +394,12 @@
         <translation>Tárcájához tartozó privát kulcsok titkosítása</translation>
     </message>
     <message>
-        <source>Sign messages with your Kusacoin addresses to prove you own them</source>
-        <translation>Írja alá az üzeneteit a Kusacoin címével, hogy bizonyítsa Öntől származnak</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation>Írja alá az üzeneteit a Bitcoin címével, hogy bizonyítsa Öntől származnak</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Kusacoin addresses</source>
-        <translation>Ellenőrizze az üzeneteket, hogy a megadott Kusacoin címekkel lettek-e aláírva</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation>Ellenőrizze az üzeneteket, hogy a megadott Bitcoin címekkel lettek-e aláírva</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -418,8 +418,8 @@
         <translation>Ablak fülek eszköztára</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kusacoin: URIs)</source>
-        <translation>Kérjen fizetéseket (QR kódokat generál és kusacoin: URLeket)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation>Kérjen fizetéseket (QR kódokat generál és bitcoin: URLeket)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -430,16 +430,16 @@
         <translation>Mutassa a használt fogadó címek és cimkék listáját</translation>
     </message>
     <message>
-        <source>Open a kusacoin: URI or payment request</source>
-        <translation>Nyisson meg egy kusacoin: URI-t vagy fizetési kérelmet</translation>
+        <source>Open a bitcoin: URI or payment request</source>
+        <translation>Nyisson meg egy bitcoin: URI-t vagy fizetési kérelmet</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Parancssor beállításai</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Kusacoin network</source>
-        <translation><numerusform>%n aktív kapcsolat a Kusacoin-hálózaton</numerusform><numerusform>%n aktív kapcsolat a Kusacoin-hálózaton</numerusform></translation>
+        <source>%n active connection(s) to Bitcoin network</source>
+        <translation><numerusform>%n aktív kapcsolat a Bitcoin-hálózaton</numerusform><numerusform>%n aktív kapcsolat a Bitcoin-hálózaton</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -482,8 +482,8 @@
         <translation>Naprakész</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Kusacoin command-line options</source>
-        <translation>Mutassa a %1 súgó üzenetet a lehetséges Kusacoin parancssori beállítások listájáért</translation>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation>Mutassa a %1 súgó üzenetet a lehetséges Bitcoin parancssori beállítások listájáért</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -552,8 +552,8 @@
         <translation>Tárca &lt;b&gt;titkosítva&lt;/b&gt; és jelenleg &lt;b&gt;zárolva&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Kusacoin can no longer continue safely and will quit.</source>
-        <translation>Fatális hiba történt. A Kusacoin program nem tud tovább biztonságosan működni és be fog záródni.</translation>
+        <source>A fatal error occurred. Bitcoin can no longer continue safely and will quit.</source>
+        <translation>Fatális hiba történt. A Bitcoin program nem tud tovább biztonságosan működni és be fog záródni.</translation>
     </message>
 </context>
 <context>
@@ -691,8 +691,8 @@
         <translation>Ez a címke pirosra változik, ha valamelyik fogadó fél kisebb összeget kap, mint a jelenlegi porszem határérték.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 tanaka(s) per input.</source>
-        <translation>Változó +/- %1 tanaka(k) megadott értékenként.</translation>
+        <source>Can vary +/- %1 satoshi(s) per input.</source>
+        <translation>Változó +/- %1 satoshi(k) megadott értékenként.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -746,8 +746,8 @@
         <translation>Küldési cím szerkesztése</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Kusacoin address.</source>
-        <translation>A megadott cím"%1" nem egy érvényes Kusacoin cím.</translation>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <translation>A megadott cím"%1" nem egy érvényes Bitcoin cím.</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -875,8 +875,8 @@
         <translation>Egyéni adatmappa használata:</translation>
     </message>
     <message>
-        <source>Kusacoin</source>
-        <translation>Kusacoin</translation>
+        <source>Bitcoin</source>
+        <translation>Bitcoin</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -887,8 +887,8 @@
         <translation>Hozzávetőlegesen %1 GB adatot fogunk ebben a könyvtárban tárolni.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Kusacoin block chain.</source>
-        <translation>%1 le fog töltődni és a Kusacoin blokk lánc egy másolatát fogja tárolni.</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation>%1 le fog töltődni és a Bitcoin blokk lánc egy másolatát fogja tárolni.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -914,12 +914,12 @@
         <translation>Űrlap</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the kusacoin network, as detailed below.</source>
-        <translation>A legutóbbi tranzakciók még lehet, hogy nem látszanak, ezért előfordulhat, hogy a pénztárca egyenlege nem a valós állapotot mutatja. Ha a pénztárca befejezte a szinkronizációt a kusacoin hálózattal, utána már az aktuális egyenleget fogja mutatni, amint alant részletesen látszik.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
+        <translation>A legutóbbi tranzakciók még lehet, hogy nem látszanak, ezért előfordulhat, hogy a pénztárca egyenlege nem a valós állapotot mutatja. Ha a pénztárca befejezte a szinkronizációt a bitcoin hálózattal, utána már az aktuális egyenleget fogja mutatni, amint alant részletesen látszik.</translation>
     </message>
     <message>
-        <source>Attempting to spend kusacoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>A hálózat nem fogadja el azoknak a kusacoinoknak az elköltését, amelyek érintettek a még nem látszódó tranzakciókban.</translation>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>A hálózat nem fogadja el azoknak a bitcoinoknak az elköltését, amelyek érintettek a még nem látszódó tranzakciókban.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1084,8 +1084,8 @@
         <translation>&amp;Költése a a jóváhagyatlan visszajárónak</translation>
     </message>
     <message>
-        <source>Automatically open the Kusacoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatikusan nyissa meg a Kusacoin kliens által használt portot a routeren. Ez csak akkor működik, ha a router támogatja a UPnP-t, és engedélyezett ez a beállítás.</translation>
+        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatikusan nyissa meg a Bitcoin kliens által használt portot a routeren. Ez csak akkor működik, ha a router támogatja a UPnP-t, és engedélyezett ez a beállítás.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1096,8 +1096,12 @@
         <translation>Kívülről érkező kapcsolatok fogadása.</translation>
     </message>
     <message>
-        <source>Connect to the Kusacoin network through a SOCKS5 proxy.</source>
-        <translation>Csatlakozás a Kusacoin hálózathoz SOCKS5 proxy használatával.</translation>
+        <source>Allow incomin&amp;g connections</source>
+        <translation>&amp;Bejövő kapcsolatok engedélyezése</translation>
+    </message>
+    <message>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation>Csatlakozás a Bitcoin hálózathoz SOCKS5 proxy használatával.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1132,8 +1136,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Kusacoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Csatlakozás a Kusacoin hálózathoz külön SOCKS5 proxy használatával a Tor rejtett szolgáltatásainak eléréséhez.</translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Csatlakozás a Bitcoin hálózathoz külön SOCKS5 proxy használatával a Tor rejtett szolgáltatásainak eléréséhez.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1174,6 +1178,10 @@
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation>Mutassa a pénzküldés beállításait vagy ne.</translation>
+    </message>
+    <message>
+        <source>&amp;Third party transaction URLs</source>
+        <translation>&amp;Harmadik féltől származó tranzakciós URL-ek</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -1235,7 +1243,7 @@
         <translation>Űrlap</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Kusacoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
         <translation>Lehet, hogy a megjelenített információ elavult. A tárcája automatikusan szinkronizál a hálózattal kapcsolódás után, de a folyamat még nem ért véget.</translation>
     </message>
     <message>
@@ -1310,8 +1318,8 @@
         <translation>Hiba történt a fizetési kérelem során</translation>
     </message>
     <message>
-        <source>Cannot start kusacoin: click-to-pay handler</source>
-        <translation>A kusacoin nem tud elindulni: click-to-pay kezelő</translation>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <translation>A bitcoin nem tud elindulni: click-to-pay kezelő</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1322,8 +1330,8 @@
         <translation>Érvénytelen fizetési cím %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Kusacoin address or malformed URI parameters.</source>
-        <translation>Az URI nem dolgozható fel! Ennek oka lehet egy érvénytelen Kusacoin-cím, vagy hibás URI-paraméterek.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <translation>Az URI nem dolgozható fel! Ennek oka lehet egy érvénytelen Bitcoin-cím, vagy hibás URI-paraméterek.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1338,6 +1346,10 @@
         <translation>Fizetési kérelem elutasítva</translation>
     </message>
     <message>
+        <source>Payment request network doesn't match client network.</source>
+        <translation>A fizetési kérelem hálózat nem egyezik a kliens hálózatával.</translation>
+    </message>
+    <message>
         <source>Payment request expired.</source>
         <translation>Fizetési kérelem lejárt</translation>
     </message>
@@ -1350,6 +1362,10 @@
         <translation>Érvénytelen fizetési kérelem</translation>
     </message>
     <message>
+        <source>Requested payment amount of %1 is too small (considered dust).</source>
+        <translation>A %1 fizetésre kért összege túl kevés (porszemnek minősül).</translation>
+    </message>
+    <message>
         <source>Refund from %1</source>
         <translation>Visszatérítés innen: %1</translation>
     </message>
@@ -1358,8 +1374,16 @@
         <translation>A %1 fizetési kérelem túl nagy (%2 bájt, megengedett: %3 bájt).</translation>
     </message>
     <message>
+        <source>Error communicating with %1: %2</source>
+        <translation>Hiba a kommunikáció során %1 -el: %2</translation>
+    </message>
+    <message>
         <source>Payment request cannot be parsed!</source>
         <translation>A fizetési kérelem nem dolgozható fel!</translation>
+    </message>
+    <message>
+        <source>Bad response from server %1</source>
+        <translation>Rossz válasz a szervertől %1</translation>
     </message>
     <message>
         <source>Network request error</source>
@@ -1373,8 +1397,16 @@
 <context>
     <name>PeerTableModel</name>
     <message>
+        <source>User Agent</source>
+        <translation>User Agent</translation>
+    </message>
+    <message>
         <source>Node/Service</source>
         <translation>Csomópont/Szolgáltatás</translation>
+    </message>
+    <message>
+        <source>NodeId</source>
+        <translation>Csomópont azonosító</translation>
     </message>
     <message>
         <source>Ping</source>
@@ -1396,8 +1428,8 @@
         <translation>Összeg</translation>
     </message>
     <message>
-        <source>Enter a Kusacoin address (e.g. %1)</source>
-        <translation>Adjon meg egy Kusacoin-címet (pl. %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation>Adjon meg egy Bitcoin-címet (pl. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1472,12 +1504,20 @@
         <translation>%1 GB</translation>
     </message>
     <message>
+        <source>%1 didn't yet exit safely...</source>
+        <translation>%1 még nem lépett ki biztonságosan...</translation>
+    </message>
+    <message>
         <source>unknown</source>
         <translation>ismeretlen</translation>
     </message>
 </context>
 <context>
     <name>QObject::QObject</name>
+    <message>
+        <source>Error: Specified data directory "%1" does not exist.</source>
+        <translation>Hiba: A megadott "%1" adatkönyvtár nem létezik.</translation>
+    </message>
     <message>
         <source>Error: %1</source>
         <translation>Hiba: %1</translation>
@@ -1557,6 +1597,10 @@
         <translation>Blokkok aktuális száma</translation>
     </message>
     <message>
+        <source>Memory Pool</source>
+        <translation>Memória Halom</translation>
+    </message>
+    <message>
         <source>Current number of transactions</source>
         <translation>Tranzakciók pillanatnyi száma</translation>
     </message>
@@ -1575,6 +1619,18 @@
     <message>
         <source>Sent</source>
         <translation>Elküldve</translation>
+    </message>
+    <message>
+        <source>&amp;Peers</source>
+        <translation>&amp;Peer-ek</translation>
+    </message>
+    <message>
+        <source>Banned peers</source>
+        <translation>Letiltott peer-ek</translation>
+    </message>
+    <message>
+        <source>Select a peer to view detailed information.</source>
+        <translation>Peer kijelölése a részletes információkért</translation>
     </message>
     <message>
         <source>Whitelisted</source>
@@ -1601,6 +1657,14 @@
         <translation>Szinkronizált blokkok</translation>
     </message>
     <message>
+        <source>User Agent</source>
+        <translation>User Agent</translation>
+    </message>
+    <message>
+        <source>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>A %1 hibakeresési naplófájl megnyitása a jelenlegi könyvtárból. Ez néhány másodpercig eltarthat nagyobb naplófájlok esetén.</translation>
+    </message>
+    <message>
         <source>Decrease font size</source>
         <translation>Betűméret csökkentése</translation>
     </message>
@@ -1625,8 +1689,24 @@
         <translation>Utolsó fogadás</translation>
     </message>
     <message>
+        <source>Ping Time</source>
+        <translation>Ping idő</translation>
+    </message>
+    <message>
+        <source>The duration of a currently outstanding ping.</source>
+        <translation>A jelenlegi kiváló ping időtartama.</translation>
+    </message>
+    <message>
         <source>Ping Wait</source>
         <translation>Várakozás ping-re</translation>
+    </message>
+    <message>
+        <source>Min Ping</source>
+        <translation>Minimum Ping</translation>
+    </message>
+    <message>
+        <source>Time Offset</source>
+        <translation>Idő Eltolódás</translation>
     </message>
     <message>
         <source>Last block time</source>
@@ -1657,6 +1737,10 @@
         <translation>Ki:</translation>
     </message>
     <message>
+        <source>Debug log file</source>
+        <translation>Hibakeresési napló fájl</translation>
+    </message>
+    <message>
         <source>Clear console</source>
         <translation>Konzol ürítése</translation>
     </message>
@@ -1681,12 +1765,32 @@
         <translation>&amp;Szétkapcsol</translation>
     </message>
     <message>
+        <source>Ban for</source>
+        <translation>Tiltás oka</translation>
+    </message>
+    <message>
+        <source>&amp;Unban</source>
+        <translation>&amp;Tiltás feloldása</translation>
+    </message>
+    <message>
+        <source>Welcome to the %1 RPC console.</source>
+        <translation>Üdv az %1 RPC konzoljában.</translation>
+    </message>
+    <message>
         <source>Use up and down arrows to navigate history, and %1 to clear screen.</source>
         <translation>Az előzmények közötti navigálásához használd a fel és le nyilakat, és %1-t a képernyő törléséhez.</translation>
     </message>
     <message>
         <source>Type %1 for an overview of available commands.</source>
         <translation>Írja be a %1 parancsot az elérhető utasítások áttekintéséhez.</translation>
+    </message>
+    <message>
+        <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
+        <translation>FIGYELEM: Csalók megpróbálnak felhasználókat rávenni, hogy parancsokat írjanak be ide, és ellopják a tárca tartalmát. Ne használja ezt a konzolt anélkül, hogy teljesen megértené egy parancs kiadásának a következményeit.</translation>
+    </message>
+    <message>
+        <source>Network activity disabled</source>
+        <translation>Hálózat aktivitása letiltva</translation>
     </message>
     <message>
         <source>(node id: %1)</source>
@@ -1736,8 +1840,8 @@
         <translation>&amp;Üzenet:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Kusacoin network.</source>
-        <translation>Opciónális üzenet csatolása a fizetési kérelemhez, ami a kérelem megnyitásakor megjelenik. Megjegyzés: Az üzenet nem lesz elküldve a fizetéssel a Kusacoin hálózaton.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation>Opciónális üzenet csatolása a fizetési kérelemhez, ami a kérelem megnyitásakor megjelenik. Megjegyzés: Az üzenet nem lesz elküldve a fizetéssel a Bitcoin hálózaton.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1748,6 +1852,10 @@
         <translation>Használja ezt az űrlapot fizetések kérésére. Minden mező &lt;b&gt;opcionális&lt;/b&gt;.</translation>
     </message>
     <message>
+        <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
+        <translation>Egy opcionálisan kérhető összeg. Hagyja üresen, vagy írjon be nullát, ha nem kívánja használni.</translation>
+    </message>
+    <message>
         <source>Clear all fields of the form.</source>
         <translation>Az űrlap összes mezőjének törlése</translation>
     </message>
@@ -1756,8 +1864,24 @@
         <translation>Törlés</translation>
     </message>
     <message>
+        <source>Requested payments history</source>
+        <translation>A kért kifizetések előzménye</translation>
+    </message>
+    <message>
+        <source>&amp;Request payment</source>
+        <translation>&amp;Fizetési kérelem</translation>
+    </message>
+    <message>
+        <source>Show the selected request (does the same as double clicking an entry)</source>
+        <translation>Mutassa meg a kiválasztott kérelmet (ugyanaz, mint a duplaklikk)</translation>
+    </message>
+    <message>
         <source>Show</source>
         <translation>Megmutatás</translation>
+    </message>
+    <message>
+        <source>Remove the selected entries from the list</source>
+        <translation>A kijelölt elemek törlése a listáról</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -1787,8 +1911,20 @@
         <translation>QR-kód</translation>
     </message>
     <message>
+        <source>Copy &amp;URI</source>
+        <translation>&amp;URI másolása</translation>
+    </message>
+    <message>
+        <source>Copy &amp;Address</source>
+        <translation>&amp;Cím másolása</translation>
+    </message>
+    <message>
         <source>&amp;Save Image...</source>
         <translation>Kép &amp;mentése</translation>
+    </message>
+    <message>
+        <source>Request payment to %1</source>
+        <translation>Fizetési kérelem tőle: %1</translation>
     </message>
     <message>
         <source>Payment information</source>
@@ -1814,7 +1950,15 @@
         <source>Message</source>
         <translation>Üzenet</translation>
     </message>
-    </context>
+    <message>
+        <source>Resulting URI too long, try to reduce the text for label / message.</source>
+        <translation>A keletkezett URI túl hosszú, próbálja meg csökkenteni a cimke / üzenet szövegének méretét.</translation>
+    </message>
+    <message>
+        <source>Error encoding URI into QR Code.</source>
+        <translation>Hiba lépett fel az URI QR kóddá alakításakor.</translation>
+    </message>
+</context>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
@@ -1837,12 +1981,36 @@
         <source>(no message)</source>
         <translation>(nincs üzenet)</translation>
     </message>
-    </context>
+    <message>
+        <source>(no amount requested)</source>
+        <translation>(nem kért összeget)</translation>
+    </message>
+    <message>
+        <source>Requested</source>
+        <translation>Kért</translation>
+    </message>
+</context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
+        <source>Send Coins</source>
+        <translation>Érmék küldése</translation>
+    </message>
+    <message>
+        <source>Coin Control Features</source>
+        <translation>Pénzküldés beállításai</translation>
+    </message>
+    <message>
+        <source>Inputs...</source>
+        <translation>Bemenetek...</translation>
+    </message>
+    <message>
         <source>automatically selected</source>
         <translation>automatikusan kiválasztva</translation>
+    </message>
+    <message>
+        <source>Insufficient funds!</source>
+        <translation>Fedezethiány!</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -1869,12 +2037,24 @@
         <translation>Visszajáró:</translation>
     </message>
     <message>
+        <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
+        <translation>Ha ezt a beállítást engedélyezi, de a visszajáró cím érvénytelen, a visszajáró egy újonnan generált címre lesz küldve.</translation>
+    </message>
+    <message>
+        <source>Custom change address</source>
+        <translation>Egyedi visszajáró cím</translation>
+    </message>
+    <message>
         <source>Transaction Fee:</source>
         <translation>Tranzakciós díj:</translation>
     </message>
     <message>
         <source>Choose...</source>
         <translation>Választás...</translation>
+    </message>
+    <message>
+        <source>Warning: Fee estimation is currently not possible.</source>
+        <translation>Figyelem: A hozzávetőleges díjszámítás jelenleg nem lehetséges.</translation>
     </message>
     <message>
         <source>per kilobyte</source>
@@ -1889,6 +2069,10 @@
         <translation>Ajánlott:</translation>
     </message>
     <message>
+        <source>Custom:</source>
+        <translation>Egyedi:</translation>
+    </message>
+    <message>
         <source>Send to multiple recipients at once</source>
         <translation>Küldés egyszerre több címzettnek</translation>
     </message>
@@ -1901,8 +2085,20 @@
         <translation>Porszem:</translation>
     </message>
     <message>
+        <source>Confirmation time target:</source>
+        <translation>Megerősítési idő cél:</translation>
+    </message>
+    <message>
+        <source>Clear &amp;All</source>
+        <translation>&amp;Mindent töröl</translation>
+    </message>
+    <message>
         <source>Balance:</source>
         <translation>Egyenleg:</translation>
+    </message>
+    <message>
+        <source>S&amp;end</source>
+        <translation>&amp;Küldés</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -1945,12 +2141,24 @@
         <translation>Az összegnek nagyobbnak kell lennie, mint 0.</translation>
     </message>
     <message>
+        <source>The amount exceeds your balance.</source>
+        <translation>Az összeg túlhaladja az egyenleged.</translation>
+    </message>
+    <message>
+        <source>Transaction creation failed!</source>
+        <translation>Tranzakció készítése sikertelen!</translation>
+    </message>
+    <message>
         <source>Payment request expired.</source>
         <translation>Fizetési kérelem lejárt</translation>
     </message>
     <message>
-        <source>Warning: Invalid Kusacoin address</source>
-        <translation>Figyelem: érvénytelen Kusacoin cím</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation>Figyelem: érvénytelen Bitcoin cím</translation>
+    </message>
+    <message>
+        <source>Confirm custom change address</source>
+        <translation>Egyedi visszajáró cím megerősítése</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1960,12 +2168,20 @@
 <context>
     <name>SendCoinsEntry</name>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>&amp;Összeg:</translation>
+    </message>
+    <message>
         <source>&amp;Label:</source>
         <translation>&amp;Címke:</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
         <translation>Válasszon a korábban használt címek közül</translation>
+    </message>
+    <message>
+        <source>This is a normal payment.</source>
+        <translation>Ez egy normális fizetés.</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1984,8 +2200,16 @@
         <translation>Bejegyzés eltávolítása</translation>
     </message>
     <message>
+        <source>Use available balance</source>
+        <translation>Elérhető egyenleg használata</translation>
+    </message>
+    <message>
         <source>Message:</source>
         <translation>Üzenet:</translation>
+    </message>
+    <message>
+        <source>Memo:</source>
+        <translation>Jegyzet:</translation>
     </message>
     </context>
 <context>
@@ -1998,12 +2222,20 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
+        <source>%1 is shutting down...</source>
+        <translation>%1 leáll...</translation>
+    </message>
+    <message>
         <source>Do not shut down the computer until this window disappears.</source>
         <translation>Ne kapcsold ki a számítógépet, amíg ez az üzenet el nem tűnik.</translation>
     </message>
 </context>
 <context>
     <name>SignVerifyMessageDialog</name>
+    <message>
+        <source>Signatures - Sign / Verify a Message</source>
+        <translation>Aláírások - Aláír / Megerősít egy Üzenetet</translation>
+    </message>
     <message>
         <source>Choose previously used address</source>
         <translation>Válasszon a korábban használt címek közül</translation>
@@ -2025,12 +2257,28 @@
         <translation>Aláírás</translation>
     </message>
     <message>
+        <source>Copy the current signature to the system clipboard</source>
+        <translation>A pillanatnyi aláírás másolása a rendszer vágólapjára</translation>
+    </message>
+    <message>
+        <source>Clear &amp;All</source>
+        <translation>&amp;Mindent töröl</translation>
+    </message>
+    <message>
+        <source>&amp;Verify Message</source>
+        <translation>&amp;Üzenet megerősítése</translation>
+    </message>
+    <message>
         <source>The entered address is invalid.</source>
         <translation>A beírt cím érvénytelen.</translation>
     </message>
     <message>
         <source>Please check the address and try again.</source>
         <translation>Ellenőrizze a címet majd próbálja újból.</translation>
+    </message>
+    <message>
+        <source>Wallet unlock was cancelled.</source>
+        <translation>A tárca feloldása elutasítva</translation>
     </message>
     <message>
         <source>Message signing failed.</source>
@@ -2044,7 +2292,11 @@
         <source>Please check the signature and try again.</source>
         <translation>Ellenőrizze az aláírást majd próbálja újból</translation>
     </message>
-    </context>
+    <message>
+        <source>Message verified.</source>
+        <translation>Üzenet megerősítve.</translation>
+    </message>
+</context>
 <context>
     <name>SplashScreen</name>
     <message>
@@ -2102,6 +2354,10 @@
         <translation>címke</translation>
     </message>
     <message>
+        <source>not accepted</source>
+        <translation>nem elfogadott</translation>
+    </message>
+    <message>
         <source>Transaction fee</source>
         <translation>Tranzakciós díj</translation>
     </message>
@@ -2128,6 +2384,10 @@
     <message>
         <source>Merchant</source>
         <translation>Kereskedő</translation>
+    </message>
+    <message>
+        <source>Debug information</source>
+        <translation>Hibakeresési információk</translation>
     </message>
     <message>
         <source>Transaction</source>
@@ -2162,6 +2422,22 @@
     <message>
         <source>Label</source>
         <translation>Címke</translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation>Offline</translation>
+    </message>
+    <message>
+        <source>Unconfirmed</source>
+        <translation>Nem megerősített</translation>
+    </message>
+    <message>
+        <source>Generated but not accepted</source>
+        <translation>Generált de nem elfogadott</translation>
+    </message>
+    <message>
+        <source>Sent to</source>
+        <translation>Küldés neki</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2209,6 +2485,10 @@
     <message>
         <source>Range...</source>
         <translation>Tartomány...</translation>
+    </message>
+    <message>
+        <source>Sent to</source>
+        <translation>Küldés neki</translation>
     </message>
     <message>
         <source>Mined</source>
@@ -2282,6 +2562,10 @@
         <source>Exporting Failed</source>
         <translation>Sikertelen export</translation>
     </message>
+    <message>
+        <source>Exporting Successful</source>
+        <translation>Sikeres exportálás</translation>
+    </message>
     </context>
 <context>
     <name>UnitDisplayStatusBarControl</name>
@@ -2291,6 +2575,18 @@
     </context>
 <context>
     <name>WalletModel</name>
+    <message>
+        <source>Send Coins</source>
+        <translation>Érmék küldése</translation>
+    </message>
+    <message>
+        <source>Increase:</source>
+        <translation>Növelés:</translation>
+    </message>
+    <message>
+        <source>New fee:</source>
+        <translation>Új díj:</translation>
+    </message>
     </context>
 <context>
     <name>WalletView</name>
@@ -2307,6 +2603,10 @@
         <translation>Tárca biztonsági mentése</translation>
     </message>
     <message>
+        <source>Wallet Data (*.dat)</source>
+        <translation>Tárca adat (*.dat)</translation>
+    </message>
+    <message>
         <source>Backup Failed</source>
         <translation>Biztonsági mentés sikertelen</translation>
     </message>
@@ -2316,10 +2616,66 @@
     </message>
     </context>
 <context>
-    <name>kusacoin-core</name>
+    <name>bitcoin-core</name>
+    <message>
+        <source>Options:</source>
+        <translation>Beállítások:</translation>
+    </message>
+    <message>
+        <source>Accept command line and JSON-RPC commands</source>
+        <translation>Parancssoros és JSON-RPC parancsok elfogadása</translation>
+    </message>
+    <message>
+        <source>Bitcoin Core</source>
+        <translation>Bitcoin Mag</translation>
+    </message>
+    <message>
+        <source>Debugging/Testing options:</source>
+        <translation>Hibakeresési/Tesztelési beállítások:</translation>
+    </message>
+    <message>
+        <source>Do you want to rebuild the block database now?</source>
+        <translation>Szeretnéd újra építeni a blokk adatbázist most?</translation>
+    </message>
+    <message>
+        <source>Error initializing block database</source>
+        <translation>Hiba a blokk adatbázis inicializálásakor</translation>
+    </message>
+    <message>
+        <source>Error loading block database</source>
+        <translation>Hiba a blokk adatbázis betöltésekor</translation>
+    </message>
+    <message>
+        <source>Error opening block database</source>
+        <translation>Hiba a blokk adatbázis megnyitásakor</translation>
+    </message>
+    <message>
+        <source>Error: Disk space is low!</source>
+        <translation>Hiba: Kicsi a lemezterület!</translation>
+    </message>
+    <message>
+        <source>Importing...</source>
+        <translation>Importálás...</translation>
+    </message>
+    <message>
+        <source>Verifying blocks...</source>
+        <translation>Blokkok megerősítése...</translation>
+    </message>
+    <message>
+        <source>Wallet debugging/testing options:</source>
+        <translation>Tárca hibakeresési/tesztelési beállítások:</translation>
+    </message>
+    <message>
+        <source>Wallet options:</source>
+        <translation>Tárca beállítások:</translation>
+    </message>
     <message>
         <source>Information</source>
         <translation>Információ</translation>
+    </message>
+    <message>
+        <source>Show all debugging options (usage: --help -help-debug)</source>
+        <translation>Összes hibakeresési beállítás mutatása (használat: --help -help-debug)</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
@@ -2330,12 +2686,76 @@
         <translation>Ez egy fejlesztés alatt álló szoftver.</translation>
     </message>
     <message>
+        <source>Transaction amount too small</source>
+        <translation>A tranzakció összege túl kicsi</translation>
+    </message>
+    <message>
+        <source>Transaction too large</source>
+        <translation>A tranzakció túl nagy</translation>
+    </message>
+    <message>
+        <source>Upgrade wallet to latest format on startup</source>
+        <translation>Tárca fejlesztése a legfrissebb formátumra az indításnál</translation>
+    </message>
+    <message>
+        <source>Username for JSON-RPC connections</source>
+        <translation>Felhasználónév a JSON-RPC kapcsolódásokhoz</translation>
+    </message>
+    <message>
+        <source>Verifying wallet(s)...</source>
+        <translation>Tárca/Tárcák megerősítése</translation>
+    </message>
+    <message>
         <source>Warning</source>
         <translation>Figyelmeztetés</translation>
     </message>
     <message>
+        <source>Password for JSON-RPC connections</source>
+        <translation>Jelszó a JSON-RPC kapcsolódásokhoz</translation>
+    </message>
+    <message>
+        <source>%s is set very high!</source>
+        <translation>%s túl magasra van állítva!</translation>
+    </message>
+    <message>
+        <source>Error loading wallet %s. Invalid characters in -wallet filename.</source>
+        <translation>Hiba a tárca betöltésekor %s. Érvénytelen karakterek a tárca fájlnévben.</translation>
+    </message>
+    <message>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
+        <translation>Figyelés a JSON-RPC kapcsolatokra itt: &lt;port&gt; (alapértelmezett:  %u vagy tesztnet: %u)</translation>
+    </message>
+    <message>
+        <source>Starting network threads...</source>
+        <translation>Hálózati szálak indítása...</translation>
+    </message>
+    <message>
+        <source>Transaction amounts must not be negative</source>
+        <translation>A tranzakciók összege nem lehet negatív</translation>
+    </message>
+    <message>
+        <source>Transaction must have at least one recipient</source>
+        <translation>Legalább egy címzettnek kell lennie a tranzakcióban </translation>
+    </message>
+    <message>
+        <source>Insufficient funds</source>
+        <translation>Fedezethiány</translation>
+    </message>
+    <message>
+        <source>Loading block index...</source>
+        <translation>A blokkindex betöltése ...</translation>
+    </message>
+    <message>
         <source>Loading wallet...</source>
         <translation>Tárca betöltése...</translation>
+    </message>
+    <message>
+        <source>Cannot downgrade wallet</source>
+        <translation>Nem lehet lemásolni a pénztárcát</translation>
+    </message>
+    <message>
+        <source>Rescanning...</source>
+        <translation>Újraszkennelés</translation>
     </message>
     <message>
         <source>Done loading</source>

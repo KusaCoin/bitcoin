@@ -7,6 +7,8 @@
 
 #include <net.h>
 
+#include <memory>
+
 #include <boost/test/unit_test.hpp>
 
 std::unique_ptr<CConnman> g_connman;

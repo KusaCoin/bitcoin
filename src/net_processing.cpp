@@ -31,6 +31,8 @@
 #include <utilmoneystr.h>
 #include <utilstrencodings.h>
 
+#include <memory>
+
 #if defined(NDEBUG)
 # error "Kusacoin cannot be compiled without assertions."
 #endif
@@ -1220,9 +1222,6 @@ void static ProcessGetData(CNode* pfrom, const Consensus::Params& consensusParam
             if (!push) {
                 vNotFound.push_back(inv);
             }
-
-            // Track requests for our stuff.
-            GetMainSignals().Inventory(inv.hash);
         }
     } // release cs_main
 
@@ -1907,9 +1906,6 @@ bool static ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStr
                     pfrom->AskFor(inv);
                 }
             }
-
-            // Track requests for our stuff
-            GetMainSignals().Inventory(inv.hash);
         }
     }
 
