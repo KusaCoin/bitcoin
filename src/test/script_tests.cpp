@@ -1487,8 +1487,8 @@ BOOST_AUTO_TEST_CASE(script_can_append_self)
 
 #if defined(HAVE_CONSENSUS_LIB)
 
-/* Test simple (successful) usage of bitcoinconsensus_verify_script */
-BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_returns_true)
+/* Test simple (successful) usage of kusacoinconsensus_verify_script */
+BOOST_AUTO_TEST_CASE(kusacoinconsensus_verify_script_returns_true)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1504,14 +1504,14 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_returns_true)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    bitcoinconsensus_error err;
-    int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kusacoinconsensus_error err;
+    int result = kusacoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 1);
-    BOOST_CHECK_EQUAL(err, bitcoinconsensus_ERR_OK);
+    BOOST_CHECK_EQUAL(err, kusacoinconsensus_ERR_OK);
 }
 
-/* Test bitcoinconsensus_verify_script returns invalid tx index err*/
-BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_index_err)
+/* Test kusacoinconsensus_verify_script returns invalid tx index err*/
+BOOST_AUTO_TEST_CASE(kusacoinconsensus_verify_script_tx_index_err)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 3;
@@ -1527,14 +1527,14 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_index_err)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    bitcoinconsensus_error err;
-    int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kusacoinconsensus_error err;
+    int result = kusacoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, bitcoinconsensus_ERR_TX_INDEX);
+    BOOST_CHECK_EQUAL(err, kusacoinconsensus_ERR_TX_INDEX);
 }
 
-/* Test bitcoinconsensus_verify_script returns tx size mismatch err*/
-BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_size)
+/* Test kusacoinconsensus_verify_script returns tx size mismatch err*/
+BOOST_AUTO_TEST_CASE(kusacoinconsensus_verify_script_tx_size)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1550,14 +1550,14 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_size)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    bitcoinconsensus_error err;
-    int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size() * 2, nIn, libconsensus_flags, &err);
+    kusacoinconsensus_error err;
+    int result = kusacoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size() * 2, nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, bitcoinconsensus_ERR_TX_SIZE_MISMATCH);
+    BOOST_CHECK_EQUAL(err, kusacoinconsensus_ERR_TX_SIZE_MISMATCH);
 }
 
-/* Test bitcoinconsensus_verify_script returns invalid tx serialization error */
-BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_serialization)
+/* Test kusacoinconsensus_verify_script returns invalid tx serialization error */
+BOOST_AUTO_TEST_CASE(kusacoinconsensus_verify_script_tx_serialization)
 {
     unsigned int libconsensus_flags = 0;
     int nIn = 0;
@@ -1573,16 +1573,16 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_tx_serialization)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << 0xffffffff;
 
-    bitcoinconsensus_error err;
-    int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kusacoinconsensus_error err;
+    int result = kusacoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, bitcoinconsensus_ERR_TX_DESERIALIZE);
+    BOOST_CHECK_EQUAL(err, kusacoinconsensus_ERR_TX_DESERIALIZE);
 }
 
-/* Test bitcoinconsensus_verify_script returns amount required error */
-BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_amount_required_err)
+/* Test kusacoinconsensus_verify_script returns amount required error */
+BOOST_AUTO_TEST_CASE(kusacoinconsensus_verify_script_amount_required_err)
 {
-    unsigned int libconsensus_flags = bitcoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS;
+    unsigned int libconsensus_flags = kusacoinconsensus_SCRIPT_FLAGS_VERIFY_WITNESS;
     int nIn = 0;
 
     CScript scriptPubKey;
@@ -1596,14 +1596,14 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_amount_required_err)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    bitcoinconsensus_error err;
-    int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kusacoinconsensus_error err;
+    int result = kusacoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, bitcoinconsensus_ERR_AMOUNT_REQUIRED);
+    BOOST_CHECK_EQUAL(err, kusacoinconsensus_ERR_AMOUNT_REQUIRED);
 }
 
-/* Test bitcoinconsensus_verify_script returns invalid flags err */
-BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_invalid_flags)
+/* Test kusacoinconsensus_verify_script returns invalid flags err */
+BOOST_AUTO_TEST_CASE(kusacoinconsensus_verify_script_invalid_flags)
 {
     unsigned int libconsensus_flags = 1 << 3;
     int nIn = 0;
@@ -1619,10 +1619,10 @@ BOOST_AUTO_TEST_CASE(bitcoinconsensus_verify_script_invalid_flags)
     CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << spendTx;
 
-    bitcoinconsensus_error err;
-    int result = bitcoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
+    kusacoinconsensus_error err;
+    int result = kusacoinconsensus_verify_script(scriptPubKey.data(), scriptPubKey.size(), (const unsigned char*)&stream[0], stream.size(), nIn, libconsensus_flags, &err);
     BOOST_CHECK_EQUAL(result, 0);
-    BOOST_CHECK_EQUAL(err, bitcoinconsensus_ERR_INVALID_FLAGS);
+    BOOST_CHECK_EQUAL(err, kusacoinconsensus_ERR_INVALID_FLAGS);
 }
 
 #endif
